@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import Home from './components/Home.vue';
+import Champions from './components/Champions.vue';
+import Champion from './components/Champion.vue';
 
 Vue.use(Router);
 
@@ -10,13 +11,18 @@ const router = new Router({
   linkActiveClass: 'is-active',
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: Home,
+      path: '/champions',
+      name: 'champions',
+      component: Champions,
+    },
+    {
+      path: '/champions/:champion',
+      name: 'champion',
+      component: Champion,
     },
     {
       path: '*',
-      redirect: { name: 'home' },
+      redirect: { name: 'champions' },
     },
   ],
 });
