@@ -1,0 +1,42 @@
+@import 'reset';
+
+* {
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+  font-family: 'BeaufortW01-Regular';
+}
+
+.champions {
+  justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 20px;
+  letter-spacing: 7px;
+  text-align: center;
+  font-weight: bold;
+}
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.champion {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+
+  .champion-name {
+    padding: 5px;
+  }
+}
+.champion-icon {
+  width: 50px;
+  height: 50px;
+}
