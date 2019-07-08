@@ -20,6 +20,8 @@
 
   <div class="ability">
 
+      <h3 class="big"> Ability</h3>
+
       <h1> {{ champion.ability.name }} </h1>
       <p> {{ champion.ability.description }} </p>
 
@@ -60,6 +62,7 @@ export default {
         }
       })
     })
+  
   },
 };
 </script>

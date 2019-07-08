@@ -1,7 +1,12 @@
 <template>
-  <article @click="redirectTo(champion)" :class="`champion tier${champion.cost}`">
+  <article @click="redirectTo(champion)" class="champion">
       <img class="champion-icon" :src="`${icons[champion.key]}`" :alt="champion.name">
       <h2 class="champion-name"> {{ champion.name }} </h2>
+      <div class="champion-cost">
+        <img class="champion-cost-image" src="../assets/img/other/coins.svg" alt="coins icon">
+        <p class="champion-cost-value"> {{ champion.cost }} </p>
+      </div>
+
   </article>
 </template>
 
