@@ -1,11 +1,15 @@
 <template>
 <div v-if="champion" class="champion-full">
+
+  <a @click="$router.go(-1)" class="go-back">
+    ← Go back
+  </a>
   
   <div class="informations">
 
     <div class="idendity">
       <img class="champion-image" :src="`${image[champion.key + '_0']}`" :alt="champion.name">
-      <h2 :class="`tier${champion.cost}`"> {{ champion.name }} </h2>
+      <h2> {{ champion.name }} </h2>
     </div>
 
     <ul class="classes">
@@ -43,11 +47,16 @@ export default {
   mounted() {
     this.axios.get('https://solomid-resources.s3.amazonaws.com/blitz/tft/data/champions.json').then((response) => {
       const champions = response.data
-      const entries = Object.entries(champions)
+      let result = [];
 
-      entries.forEach(champion => {
-        if (champion[1].key === this.$route.params.champion) {
-          this.champion = champion[1];
+      for(var i in champions) {
+        const champion = champions[i];
+          result.push(champion);
+      }
+
+      result.forEach(champion => {
+        if (champion.key === this.$route.params.champion) {
+          this.champion = champion;
         }
       })
     })

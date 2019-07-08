@@ -15,8 +15,26 @@ main {
   max-width: 1024px;
   margin: 0 auto;
 }
+
+.sort-champions {
+  margin: 16px;
+
+  & select {
+    display: block;
+    padding: 3px;
+    margin: 8px;
+  }
+}
+
+.go-back {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
 .champion {
-  box-shadow: 0px 1px 4px 1px rgba(0,0,0,0.15);
+  box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.25);
   background: #F7F7F7;  
   cursor: pointer;
   transition: transform .15s;
@@ -89,18 +107,18 @@ main {
   }
 }
 
-.tier1 {
-  color: grey;
-}
-.tier2 {
-  color: green;
-}
-.tier3 {
-  color: blue;
-}
-.tier4 {
-  color: purple;
-}
-.tier5 {
-  color: orange;
-}
+// .tier1 {
+//   background-color: #EEEEEE;
+// }
+// .tier2 {
+//   background-color: #A5D6A7;
+// }
+// .tier3 {
+//   background-color: #81D4FA;
+// }
+// .tier4 {
+//   background-color: #CE93D8;
+// }
+// .tier5 {
+//   background-color: #FFCC80;
+// }
