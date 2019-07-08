@@ -19,6 +19,10 @@
       <h1> {{ champion.ability.name }} </h1>
       <p> {{ champion.ability.description }} </p>
 
+      <ul class="stats">
+        <li v-for="stat in champion.ability.stats" :key="stat.type"> {{ stat.type }} : {{ stat.value }} </li>
+      </ul>
+
   </div>
 
 </div>

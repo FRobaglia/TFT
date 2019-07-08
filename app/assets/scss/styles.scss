@@ -1,27 +1,15 @@
-@import 'reset';
+@import 'vendors/reset';
 
-* {
-  box-sizing: border-box;
-}
+@import 'config/fonts';
 
-body {
-  background: whitesmoke;
-  position: relative;
-  overflow-x: hidden;
-  font-family: 'BeaufortW01-Regular';
-}
+@import 'global/layout';
+
+
 
 .champions {
   justify-content: center;
   display: flex;
   flex-flow: row wrap;
-}
-
-h1 {
-  font-size: 48px;
-  margin: 20px;
-  text-align: center;
-  font-weight: bold;
 }
 main {
   max-width: 1024px;
