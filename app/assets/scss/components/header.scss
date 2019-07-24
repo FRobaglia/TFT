@@ -1,0 +1,52 @@
+header {
+  padding: 11px 0px;
+  width: 100%;
+  background: $primary;
+  color: $white;
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      display: flex;
+
+      li {
+        font-weight: bold;
+        margin: 0px 16px;
+
+        &.soon::after {
+          content: "Coming soon !";
+          color: $primary;
+          background: rgb(255, 141, 120);
+          border-radius: 4px;
+          padding: 2px;
+          margin: 0px 5px;
+          font-size: 9px;
+        }
+      }
+    }
+  }
+}
+
+.search-input {
+  background: $grey;
+  transition: background .7s;
+  font-family: 'Beaufort';
+  border: none;
+  outline: none;
+  padding: 8px;
+  padding-right: 25px;
+
+  &:focus {
+    background: $white;
+  }
+}
+
+.search-button {
+  cursor: pointer;
+  background: none;
+  outline: none;
+  border: none;
+  transform: translateX(-30px);
+}

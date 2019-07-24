@@ -1,0 +1,25 @@
+.full {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: column wrap;
+  height: 50vh;
+
+  .flex {
+    transform: translateX(7px);
+  }
+}
+
+
+.full input {
+  padding: 16px;
+  padding-right: 35px;
+  width: 50vw;
+  max-width: 560px;
+}
+
+
+.full input:focus {
+  border-bottom: 1px solid black;
+}

@@ -6,5 +6,4 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
  
 Vue.use(VueAxios, axios);
-
 new Vue({ router: router }).$mount('#root');

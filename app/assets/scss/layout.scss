@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Beaufort';
+  color: $black;
+  background: $white;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 8px;
+
+  &.catch-phrase {
+    text-align: center;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

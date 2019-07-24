@@ -1,0 +1,40 @@
+@keyframes appear {
+  from {
+    transform: scale(.7);
+    opacity: 0;
+  } to {
+    transform: initial;
+    opacity: initial;
+  }
+}
+
+.summoner {
+  animation: appear .5s linear;
+  text-align: center;
+  .summoner-name {
+    padding: 16px;
+    font-size: 48px;
+    font-weight: bold;
+  }
+
+  .summoner-emblem {
+    width: 180px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 16px;
+  }
+
+  .summoner-rank {
+    padding: 8px;
+    font-size: 18px;
+  }
+
+  .summoner-points {
+    padding: 8px;
+    font-size: 18px;
+
+    .amount {
+      font-size: 32px;
+    }
+  }
+}

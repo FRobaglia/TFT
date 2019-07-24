@@ -1,159 +1,18 @@
+/* vendors */
+
 @import 'vendors/reset';
 
+/* config */
 @import 'config/fonts';
-
-@import 'global/layout';
-
+@import 'config/variables';
 
 
-.champions {
-  justify-content: center;
-  display: flex;
-  flex-flow: row wrap;
-}
-main {
-  max-width: 1024px;
-  margin: 0 auto;
-}
+@import 'layout';
 
-.sort-champions {
-  margin: 16px;
+/* components */
 
-  & select {
-    display: block;
-    padding: 3px;
-    margin: 8px;
-  }
-}
+@import 'components/summoner';
+@import 'components/tracker';
+@import 'components/header';
 
-.go-back {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  font-size: 20px;
-  cursor: pointer;
-}
-.champion {
-  position: relative;
-  height: 135px;
-  box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.25);
-  cursor: pointer;
-  transition: transform .15s;
-  margin: 8px;
-  padding: 8px;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-  .champion-name {
-    margin-top: 10px;
-    white-space: nowrap;
-  }
-  .champion-icon {
-    border-radius: 50%;
-    width: 50%;
-  }
-}
-.champion-full {
-  text-align: left;
-  position: relative;
-  min-height: 100vh;
-  h1 {
-    text-align: left;
-    margin: 20px 0px;
-  }
-
-  .big {
-    width: 100%;
-    font-size: 72px;
-    padding: 32px 0px;
-    border-bottom: 1px solid grey;
-  }
-
-  .idendity {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-
-    & h2 {
-      font-weight: bold;
-      font-size: 32px;
-      padding: 5px;
-      margin: 15px 0px;
-    }
-  }
-  .informations {
-    width: 250px;
-    padding: 32px;
-  }
-  .informations, .ability {
-    margin: 16px;
-    display: inline-block;
-    vertical-align: top;
-  }
-  .ability {
-    line-height: 200%;
-  }
-  .champion-image {
-    border-radius: 100%;
-    width: 100%;
-  }
-  .classes {
-    display: flex;
-    justify-content: space-evenly;
-    flex-flow: row wrap;
-
-    & li {
-      text-align: center;
-      width: 100px;
-      padding: 8px;
-      margin: 6px;
-      border-radius: 3px;
-      background: midnightblue;
-      color: whitesmoke;
-    }
-  }
-}
-
-// .tier1 {
-//   background-color: #EEEEEE;
-// }
-// .tier2 {
-//   background-color: #A5D6A7;
-// }
-// .tier3 {
-//   background-color: #81D4FA;
-// }
-// .tier4 {
-//   background-color: #CE93D8;
-// }
-// .tier5 {
-//   background-color: #FFCC80;
-// }
-
-.champion-cost {
-  display: flex;
-
-  .champion-cost-image {
-    width: 16px;
-  }
-
-  .champion-cost-value,  .champion-cost-image {
-    margin: 0px 3px;
-    margin-top: 8px
-  }
-}
-
-@media (max-width: 868px) {
-  .champion-full, .champion-full .big, .champion-full h1 {
-    text-align: center;
-  }
-
-  .champion-full .go-back {
-    top: 16px;
-  }
-}
+@import 'components/champion';
