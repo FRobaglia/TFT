@@ -2,4 +2,4 @@
 An information website about Teamfight Tactics, a new game by Riot games
 
 
-See website on : https://tftlegends.netlify.com
+See website on : https://tftlegends.epizy.com
