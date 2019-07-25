@@ -1,6 +1,7 @@
 # Website
 
 https://tftlegends.epizy.com
+(username: kugg, password: kugg)
 
 # Tracker
 
