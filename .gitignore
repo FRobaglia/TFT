@@ -4,3 +4,6 @@ dist
 .vscode
 .env
 api
+api.zip
+dist.zip
+*.zip
