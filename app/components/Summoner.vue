@@ -34,6 +34,13 @@ export default {
       queues: [],
       TFT: null,
       error: false,
+      config: {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'  
+        }
+      }
     };
   },
   mounted() {
@@ -41,11 +48,13 @@ export default {
   },
   methods: {
     fetchSummoner() {
-      this.axios.get(`${window.location.hostname}/api/end_points/summoner.php?s=${this.$route.params.summonerName}`).then((response) => {
+      let url = `../api/end_points`;
+      this.axios.get(`${url}/summoner.php?s=${this.$route.params.summonerName}`, this.config).then((response) => {
         this.summoner = response.data
+        console.log(response.data);
 
         if (Number.isInteger(this.summoner.summonerLevel)) {
-          this.axios.get(`${window.location.hostname}/api/end_points/queues.php?s=${this.summoner.id}`).then((response) => {
+          this.axios.get(`${url}/queues.php?s=${this.summoner.id}`, this.config).then((response) => {
           this.queues = response.data
           if (Array.isArray(this.queues)) {
             this.TFT = this.queues.find(function(queue) {

@@ -3,13 +3,84 @@ header {
   width: 100%;
   background: $primary;
   color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .nav-button {
+    transition: background .3s, transform .3s;
+    outline: none;
+    z-index: 5;
+    cursor: pointer;
+    position: relative;
+    width: 48px;
+    border-radius: 50%;
+    background: $primary;
+    color: $white;
+    text-align: center;
+    height: 48px;
+    border: none;
+    display: none;
+    margin-left: 16px;
+
+    &.close {
+      transform: translateX(calc(55vw - 150%));
+      background: $white;
+
+      .burger-icon::before {
+        background: $primary;
+        top:0px;
+        left: 0px;
+        transform: rotate(45deg);
+      }
+
+      .burger-icon::after {
+        background: $primary;
+        top:0px;
+        left: 0px;
+        transform: rotate(-45deg);
+      }
+    }
+    
+    .burger-icon {
+      transition: top .3s, left .3s, transform .3s, background .3s;
+      width: 60%;
+      height: 3px;
+      background: $white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+      &::after, &::before {
+        transition: top .3s, left .3s, transform .3s, background .3s;
+        content: ""; 
+        width: 100%;
+        height: 3px;
+        background: $white;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      &::after {
+        top: 8px;
+      }
+      &::before {
+        top: -8px;
+      }
+    }
+  }
+
   nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    z-index: 3;
 
     ul {
       display: flex;
+        
+      li:nth-child(1) {
+        display: none;
+      }
 
       li {
         font-weight: bold;
@@ -18,11 +89,11 @@ header {
         &.soon::after {
           content: "Coming soon !";
           color: $primary;
-          background: rgb(255, 141, 120);
+          background: lightcoral;
           border-radius: 4px;
           padding: 2px;
           margin: 0px 5px;
-          font-size: 9px;
+          font-size: 10px;
         }
       }
     }
@@ -31,22 +102,100 @@ header {
 
 .search-input {
   background: $grey;
-  transition: background .7s;
+  transition: background .45s, color .45s;
   font-family: 'Beaufort';
   border: none;
   outline: none;
+  min-width: 300px;
   padding: 8px;
   padding-right: 25px;
 
   &:focus {
-    background: $white;
+    color: $white;
+    background: $primary;
+    border-bottom: 1px solid $white;
+
+    & ~ .search-button {
+      color: $white;
+    }
   }
 }
 
 .search-button {
+  transition: color .45s;
   cursor: pointer;
   background: none;
   outline: none;
   border: none;
   transform: translateX(-30px);
+}
+
+
+
+@media (max-width: 868px) {
+  header {
+    background: none;
+
+    .nav-button {
+      display: block;
+    }
+
+    form {
+      display: none;
+    }
+    
+    nav {
+      transition: left .3s;
+      top: 0;
+      background: $primary;
+      flex-flow: column wrap;
+      left: -55vw;
+      height: 100vh;
+      width: 55vw;
+      position: absolute;
+
+      &.is-open {
+        left: 0;
+      }
+      
+      ul {
+        flex-flow: column wrap;
+        
+        li:nth-child(1) {
+          height: 70px;
+          line-height: 70px;
+          font-size: 32px;
+          font-weight: bold;
+          display: block;
+        }
+        li {
+          line-height: 50px;
+          height: 50px;
+          white-space: no-wrap;
+          padding-left: 8px;
+          margin: 0;
+          position: relative;
+
+          &.soon::after {
+            position: absolute;
+            color: $primary;
+            background: lightcoral;
+            border-radius: initial;
+            line-height: initial;
+            margin: 0;
+            font-size: 11px;
+            right: 0;
+            top: 0;
+          }
+
+          a {
+            display: block;
+          }
+        }
+        li:nth-child(even) {
+          background: #5352ed;
+        }
+      }
+    }
+  }
 }
