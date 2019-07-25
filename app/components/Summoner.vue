@@ -49,6 +49,7 @@ export default {
   methods: {
     fetchSummoner() {
       let url = `../api/end_points`;
+      console.log(url + '/summoner.php?s=' + this.$route.params.summonerName);
       this.axios.get(`${url}/summoner.php?s=${this.$route.params.summonerName}`, this.config).then((response) => {
         this.summoner = response.data
         console.log(response.data);
